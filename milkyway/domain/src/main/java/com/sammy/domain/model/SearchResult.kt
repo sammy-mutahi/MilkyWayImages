@@ -5,5 +5,6 @@ data class SearchResult(
     val title: String,
     val center: String,
     val dateCreated: String,
-    val imagePath: String
+    val imagePath: String,
+    val description: String,
 )

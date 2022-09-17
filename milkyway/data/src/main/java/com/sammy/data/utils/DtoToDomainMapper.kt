@@ -14,7 +14,8 @@ internal fun SearchResultDto.toSearchResult(): List<SearchResult> {
                 title = items[index].title,
                 center = items[index].center,
                 dateCreated = items[index].dateCreated,
-                imagePath = links[index].href
+                imagePath = links[index].href,
+                description = items[index].description
             )
         )
     }
