@@ -1,14 +1,18 @@
 package com.sammy.presentation.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.sammy.presentation.R
 import com.sammy.presentation.databinding.FragmentSearchBinding
+import com.sammy.presentation.utils.handleNavigationUp
 import dagger.hilt.android.AndroidEntryPoint
+import java.lang.ref.WeakReference
 
 @AndroidEntryPoint
 class SearchFragment : Fragment() {
@@ -30,7 +34,16 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.apply {
+            lifecycleOwner = viewLifecycleOwner
+            viewModel = this@SearchFragment.viewModel
+        }
+
+        binding.toolbar.handleNavigationUp(WeakReference(this))
+
         initObservers()
+
+        setupRecyclerView()
 
         viewModel.getSearchResult(
             query = "milky way",
@@ -40,12 +53,19 @@ class SearchFragment : Fragment() {
         )
     }
 
+    private fun setupRecyclerView() {
+        binding.galaxyRecycler.adapter = SearchResultAdapter(SearchResultClickListener {
+            viewModel.setSearchResultItem(it)
+            findNavController().navigate(
+                R.id.action_searchFragment_to_searchItemDetailsFragment,
+                bundleOf("selectedItem" to it)
+            )
+        })
+    }
+
     private fun initObservers() {
-        viewModel.searchResult.observe(viewLifecycleOwner) {
-            Log.e("Fragment", "List of Items is Empty:${it.isEmpty()}")
-        }
         viewModel.errorMessage.observe(viewLifecycleOwner) {
-            Log.e("Fragment", "Error: $it")
+
         }
     }
 }

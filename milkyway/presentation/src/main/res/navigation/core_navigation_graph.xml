@@ -9,6 +9,22 @@
         android:id="@+id/searchFragment"
         android:name="com.sammy.presentation.ui.SearchFragment"
         android:label="Search Fragment"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search">
+
+        <action
+            android:id="@+id/action_searchFragment_to_searchItemDetailsFragment"
+            app:destination="@id/searchItemDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchItemDetailsFragment"
+        android:name="com.sammy.presentation.ui.SearchDetailsFragment"
+        android:label="DeatilsFragment"
+        tools:layout="@layout/fragment_search_details">
+        <argument
+            android:name="item"
+            app:argType="com.sammy.domain.model.SearchResult" />
+
+    </fragment>
 
 </navigation>

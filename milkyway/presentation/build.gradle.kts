@@ -4,6 +4,8 @@ apply {
 
 dependencies {
     "implementation"(project(Modules.domain))
+    "implementation"(Coil.coilKt)
+    "implementation"(FacebookShimmer.facebookShimmer)
     "implementation"(Google.material)
     "implementation"(Retrofit.retrofit)
     "implementation"(Retrofit.moshiConverter)

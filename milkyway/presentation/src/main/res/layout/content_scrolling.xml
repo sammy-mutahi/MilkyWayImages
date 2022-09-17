@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="selectedItem"
+            type="com.sammy.domain.model.SearchResult" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/titleText"
+                    style="@style/TextAppearance.Material3.TitleLarge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@{selectedItem.title}"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Hubble" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/centerTitle"
+                    style="@style/TextAppearance.Material3.TitleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Center: "
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/titleText"
+                    app:layout_constraintTop_toBottomOf="@+id/titleText" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textText"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@{selectedItem.center}"
+                    app:layout_constraintBottom_toBottomOf="@+id/centerTitle"
+                    app:layout_constraintStart_toEndOf="@+id/centerTitle"
+                    app:layout_constraintTop_toTopOf="@+id/centerTitle" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/dateCreatedTitle"
+                    style="@style/TextAppearance.Material3.TitleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Date Created: "
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/centerTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/centerTitle" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textDateCreated"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@{selectedItem.dateCreated}"
+                    app:layout_constraintBottom_toBottomOf="@+id/dateCreatedTitle"
+                    app:layout_constraintStart_toEndOf="@+id/dateCreatedTitle"
+                    app:layout_constraintTop_toTopOf="@+id/dateCreatedTitle"
+                    tools:text="2015-03-21" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textView6"
+                    style="@style/TextAppearance.Material3.BodyMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@{selectedItem.description}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/dateCreatedTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/dateCreatedTitle"
+                    tools:text="some very long text" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

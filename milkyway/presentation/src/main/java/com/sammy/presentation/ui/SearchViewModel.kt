@@ -32,6 +32,9 @@ class SearchViewModel @Inject constructor(
     private val _errorMessage = MutableLiveData<String>()
     val errorMessage: LiveData<String> = _errorMessage
 
+    private val _selectedSearchItem = MutableLiveData<SearchResult>()
+    val selectedSearchItem: LiveData<SearchResult> = _selectedSearchItem
+
     fun getSearchResult(
         query: String,
         mediaType: String,
@@ -89,5 +92,9 @@ class SearchViewModel @Inject constructor(
 
             }
         }
+    }
+
+    fun setSearchResultItem(item: SearchResult) {
+        _selectedSearchItem.value = item
     }
 }
