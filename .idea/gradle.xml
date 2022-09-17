@@ -11,6 +11,10 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/milkyway" />
+            <option value="$PROJECT_DIR$/milkyway/data" />
+            <option value="$PROJECT_DIR$/milkyway/domain" />
+            <option value="$PROJECT_DIR$/milkyway/presentation" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -1,4 +1,4 @@
 object Modules {
-    const val presentation = ":milkyway:milkyway_presentation"
-    const val domain = ":milkyway:milkyway_domain"
+    const val presentation = ":milkyway:presentation"
+    const val domain = ":milkyway:domain"
 }

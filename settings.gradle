@@ -14,3 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "MilkyWayImages"
 include ':app'
+include(":milkyway")
+include(":milkyway:data")
+include(":milkyway:domain")
+include(":milkyway:presentation")
