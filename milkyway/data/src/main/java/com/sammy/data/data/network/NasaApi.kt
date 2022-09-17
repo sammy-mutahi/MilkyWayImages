@@ -7,11 +7,11 @@ import retrofit2.http.Query
 interface NasaApi {
 
     @GET("/search")
-    suspend fun getImages(
-        @Query("q") query: String = "milky way",
-        @Query("media_type") mediaType: String = "image",
-        @Query("year_start") startYear: String = "2017",
-        @Query("year_end") endYear: String = "2017"
+    suspend fun getSearchResult(
+        @Query("q") query: String,
+        @Query("media_type") mediaType: String,
+        @Query("year_start") startYear: String,
+        @Query("year_end") endYear: String
     ): SearchResultDto
 
 
