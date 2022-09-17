@@ -12,6 +12,9 @@
 /captures
 /buildSrc/.gradle
 /buildSrc/build
+/milkyway/data/build
+/milkyway/domain/build
+/milkyway/presentation/build
 .externalNativeBuild
 .cxx
 local.properties
