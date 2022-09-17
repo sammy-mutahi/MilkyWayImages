@@ -21,9 +21,11 @@ android {
             isMinifyEnabled = false
         }
     }
+
     buildFeatures {
-        viewBinding = true
+        dataBinding = true
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -38,13 +40,15 @@ dependencies {
     implementation(AndroidX.appCompat)
     implementation(AndroidX.constraintLayout)
 
-
+    implementation(project(Modules.domain))
+    implementation(project(Modules.data))
     implementation(project(Modules.presentation))
 
     implementation(DaggerHilt.hiltAndroid)
     kapt(DaggerHilt.hiltCompiler)
 
-    implementation(Google.material)
+    implementation(Navigation.navigationFragmentKtx)
+    implementation(Navigation.navigationUiKtx)
 
     implementation(Retrofit.okHttp)
     implementation(Retrofit.retrofit)

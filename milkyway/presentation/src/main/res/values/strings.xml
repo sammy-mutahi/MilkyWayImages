@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="offline_error">Apologies we are down for scheduled maintenance to improve the app, please check in later</string>
+</resources>

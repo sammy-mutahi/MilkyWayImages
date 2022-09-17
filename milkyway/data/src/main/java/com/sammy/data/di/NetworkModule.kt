@@ -1,6 +1,8 @@
 package com.sammy.data.di
 
 import com.sammy.data.data.network.NasaApi
+import com.sammy.data.data.repository.SearchRepositoryImpl
+import com.sammy.domain.repository.SearchRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -40,4 +42,9 @@ object NetworkModule {
             .create(NasaApi::class.java)
     }
 
+    @Provides
+    @Singleton
+    fun provideSearchRepository(apiService: NasaApi): SearchRepository {
+        return SearchRepositoryImpl(apiService)
+    }
 }

@@ -1,26 +1,25 @@
 package com.sammy.data.data.dto
 
-import com.squareup.moshi.Json
 
 data class SearchResultDto(
-    val version: String,
     val collection: Collection
 )
 
 data class Collection(
-    val items: List<Data>,
-    val links: List<Link>
+    val href: String,
+    val items: List<Item>,
+    val metadata: Metadata,
+    val version: String
 )
 
-data class Data(
-    val title: String,
-    val location: String,
-    @Json(name = "nasa_id")
-    val nasaId: String,
-    val description: String,
-    val center: String,
-    @Json(name = "date_created")
-    val dateCreated: String
+data class Metadata(
+    val total_hits: Int
+)
+
+data class Item(
+    val `data`: List<Data>,
+    val href: String,
+    val links: List<Link>
 )
 
 data class Link(
@@ -29,3 +28,16 @@ data class Link(
     val render: String
 )
 
+data class Data(
+    val album: List<String>,
+    val center: String,
+    val date_created: String,
+    val description: String,
+    val description_508: String,
+    val keywords: List<String>,
+    val location: String,
+    val media_type: String,
+    val nasa_id: String,
+    val secondary_creator: String,
+    val title: String
+)

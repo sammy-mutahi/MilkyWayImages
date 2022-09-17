@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
+        <entry key="milkyway/presentation/src/main/res/layout/fragment_search.xml" value="0.19610507246376813" />
+        <entry key="milkyway/presentation/src/main/res/layout/search_fragment.xml" value="0.19610507246376813" />
       </map>
     </option>
   </component>
