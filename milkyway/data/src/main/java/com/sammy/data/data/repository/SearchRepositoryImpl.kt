@@ -1,6 +1,5 @@
 package com.sammy.data.data.repository
 
-import android.util.Log
 import com.sammy.data.data.network.NasaApi
 import com.sammy.data.utils.toSearchResult
 import com.sammy.domain.model.SearchResult
@@ -30,7 +29,6 @@ class SearchRepositoryImpl @Inject constructor(
                 startYear = startYear,
                 endYear = endYear
             )
-            Log.e("Repository", "Response: ${result.toSearchResult()[0]}")
             Result.success(result.toSearchResult())
         } catch (e: Throwable) {
             Result.failure(e)
