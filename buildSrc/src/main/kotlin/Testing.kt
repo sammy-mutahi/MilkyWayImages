@@ -25,4 +25,7 @@ object Testing {
 
     private const val testRunnerVersion = "1.4.0"
     const val testRunner = "androidx.test:runner:$testRunnerVersion"
+
+    private const val fragmentTestVersion = "1.5.2"
+    const val fragmentTest = "androidx.fragment:fragment-testing:$fragmentTestVersion"
 }

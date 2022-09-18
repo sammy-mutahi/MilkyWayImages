@@ -14,6 +14,7 @@ android {
         targetSdk = ProjectConfig.targetSdk
         versionCode = ProjectConfig.versionCode
         versionName = ProjectConfig.versionName
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -59,9 +60,19 @@ dependencies {
     testImplementation(Testing.junit4)
     testImplementation(Testing.junitAndroidExt)
     testImplementation(Testing.truth)
+    androidTestImplementation(Testing.truth)
     testImplementation(Testing.coroutines)
     testImplementation(Testing.turbine)
     testImplementation(Testing.mockk)
     testImplementation(Testing.mockWebServer)
+
+    debugImplementation(Testing.fragmentTest)
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    androidTestImplementation("androidx.test:runner:1.4.0")
+    androidTestImplementation("androidx.test:rules:1.4.0")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.40")
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.40")
+
+    androidTestImplementation("androidx.navigation:navigation-testing:2.5.2")
 
 }
