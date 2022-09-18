@@ -23,7 +23,7 @@ fun AppCompatImageView.setThumbnail(imagePath: String) {
 
 @BindingAdapter(value = ["center", "dateCreated"], requireAll = true)
 fun setBody(textview: MaterialTextView, center: String, dateCreated: String) {
-    textview.text = "${center.uppercase()} | ${dateCreated}"
+    textview.text = "${center.uppercase()} | ${dateCreated.formatDate()}"
 }
 
 @BindingAdapter(value = ["visibilityOnState", "visibilityCondition"], requireAll = true)

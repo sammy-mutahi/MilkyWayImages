@@ -54,16 +54,6 @@
                     app:navigationIcon="@drawable/ic_back_arrow"
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/toolbar_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:paddingStart="16dp"
-                        android:paddingEnd="16dp"
-                        android:text="@{selectedItem.title}"
-                        android:textColor="@android:color/white"
-                        android:textSize="18sp" />
 
                 </com.google.android.material.appbar.MaterialToolbar>
 
