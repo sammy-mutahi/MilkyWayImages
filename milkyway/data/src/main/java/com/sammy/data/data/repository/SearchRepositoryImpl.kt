@@ -1,5 +1,6 @@
 package com.sammy.data.data.repository
 
+import com.sammy.data.data.dto.SearchResultDto
 import com.sammy.data.data.network.NasaApi
 import com.sammy.data.utils.toSearchResult
 import com.sammy.domain.model.SearchResult
@@ -30,6 +31,26 @@ class SearchRepositoryImpl @Inject constructor(
                 endYear = endYear
             )
             Result.success(result.toSearchResult())
+        } catch (e: Throwable) {
+            Result.failure(e)
+        }
+    }
+
+    //Mock search
+    suspend fun getMockSearchResult(
+        query: String,
+        mediaType: String,
+        startYear: String,
+        endYear: String
+    ): Result<SearchResultDto> {
+        return try {
+            val response = api.getSearchResult(
+                query = query,
+                mediaType = mediaType,
+                startYear = startYear,
+                endYear = endYear
+            )
+            Result.success(response)
         } catch (e: Throwable) {
             Result.failure(e)
         }

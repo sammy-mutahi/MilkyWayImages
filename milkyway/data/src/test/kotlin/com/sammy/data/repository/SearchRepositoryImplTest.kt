@@ -3,8 +3,8 @@ package com.sammy.data.repository
 import com.google.common.truth.Truth
 import com.sammy.data.data.network.NasaApi
 import com.sammy.data.data.repository.SearchRepositoryImpl
-import com.sammy.data.invalidResponse
-import com.sammy.data.validResponse
+import com.sammy.data.network.invalidResponse
+import com.sammy.data.network.validDToResponse
 import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockResponse
@@ -31,7 +31,7 @@ class SearchRepositoryImplTest {
             .connectTimeout(1, TimeUnit.SECONDS)
             .build()
         api = Retrofit.Builder()
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create().asLenient())
             .client(okHttpClient)
             .baseUrl(mockWebServer.url("/"))
             .build()
@@ -46,9 +46,9 @@ class SearchRepositoryImplTest {
         mockWebServer.enqueue(
             MockResponse()
                 .setResponseCode(200)
-                .setBody(validResponse)
+                .setBody(validDToResponse)
         )
-        val result = repositoryImpl.getSearchResult(
+        val result = repositoryImpl.getMockSearchResult(
             query = "milky way",
             mediaType = "image",
             startYear = "2017",
