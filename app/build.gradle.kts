@@ -14,6 +14,7 @@ android {
         targetSdk = ProjectConfig.targetSdk
         versionCode = ProjectConfig.versionCode
         versionName = ProjectConfig.versionName
+        testInstrumentationRunner = "com.sammy.milkywayimages.test.CustomTestRunner"
     }
 
     buildTypes {
@@ -21,9 +22,11 @@ android {
             isMinifyEnabled = false
         }
     }
+
     buildFeatures {
-        viewBinding = true
+        dataBinding = true
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -38,13 +41,15 @@ dependencies {
     implementation(AndroidX.appCompat)
     implementation(AndroidX.constraintLayout)
 
-
+    implementation(project(Modules.domain))
+    implementation(project(Modules.data))
     implementation(project(Modules.presentation))
 
     implementation(DaggerHilt.hiltAndroid)
     kapt(DaggerHilt.hiltCompiler)
 
-    implementation(Google.material)
+    implementation(Navigation.navigationFragmentKtx)
+    implementation(Navigation.navigationUiKtx)
 
     implementation(Retrofit.okHttp)
     implementation(Retrofit.retrofit)
@@ -55,9 +60,20 @@ dependencies {
     testImplementation(Testing.junit4)
     testImplementation(Testing.junitAndroidExt)
     testImplementation(Testing.truth)
+    androidTestImplementation(Testing.truth)
     testImplementation(Testing.coroutines)
     testImplementation(Testing.turbine)
     testImplementation(Testing.mockk)
     testImplementation(Testing.mockWebServer)
+    implementation(Testing.espressoContrib)
+
+    debugImplementation(Testing.fragmentTest)
+    androidTestImplementation(Testing.mockkAndroid)
+    androidTestImplementation(Testing.espresso)
+    androidTestImplementation(Testing.testRunner)
+    androidTestImplementation(Testing.testRule)
+    androidTestImplementation(Testing.hiltTesting)
+    kaptAndroidTest(Testing.hiltTestingCompiler)
+    androidTestImplementation(Testing.navigationTest)
 
 }

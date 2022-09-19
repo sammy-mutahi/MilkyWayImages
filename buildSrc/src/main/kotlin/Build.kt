@@ -3,6 +3,8 @@ object Build {
     const val androidBuildTools = "com.android.tools.build:gradle:$androidBuildToolsVersion"
 
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Kotlin.version}"
+    const val kotlinAndroidExtension =
+        "org.jetbrains.kotlin:kotlin-android-extensions:${Kotlin.version}"
 
     private const val hiltAndroidGradlePluginVersion = "2.38.1"
     const val hiltAndroidGradlePlugin =

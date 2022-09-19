@@ -2,6 +2,9 @@ object Testing {
     private const val junitVersion = "4.13.2"
     const val junit4 = "junit:junit:$junitVersion"
 
+    private const val junitKtxVersion = "1.1.3"
+    const val junitKtx = "androidx.test.ext:junit-ktx:$junitKtxVersion"
+
     private const val junitAndroidExtVersion = "1.1.3"
     const val junitAndroidExt = "androidx.test.ext:junit:$junitAndroidExtVersion"
 
@@ -11,7 +14,7 @@ object Testing {
     private const val truthVersion = "1.1.3"
     const val truth = "com.google.truth:truth:$truthVersion"
 
-    private const val mockkVersion = "1.10.0"
+    private const val mockkVersion = "1.11.0"
     const val mockk = "io.mockk:mockk:$mockkVersion"
     const val mockkAndroid = "io.mockk:mockk-android:$mockkVersion"
 
@@ -22,7 +25,22 @@ object Testing {
     const val mockWebServer = "com.squareup.okhttp3:mockwebserver:$mockWebServerVersion"
 
     const val hiltTesting = "com.google.dagger:hilt-android-testing:${DaggerHilt.version}"
+    const val hiltTestingCompiler = "com.google.dagger:hilt-android-compiler:${DaggerHilt.version}"
 
     private const val testRunnerVersion = "1.4.0"
     const val testRunner = "androidx.test:runner:$testRunnerVersion"
+
+    private const val fragmentTestVersion = "1.5.2"
+    const val fragmentTest = "androidx.fragment:fragment-testing:$fragmentTestVersion"
+
+    private const val espressoVersion = "3.4.0"
+    const val espresso = "androidx.test.espresso:espresso-core:$espressoVersion"
+    const val espressoContrib = "androidx.test.espresso:espresso-contrib:$espressoVersion"
+
+    private const val testRuleVersion = "1.4.0"
+    const val testRule = "androidx.test:rules:$testRuleVersion"
+
+    private const val navigationTestVersion = "2.5.2"
+    const val navigationTest = "androidx.navigation:navigation-testing:$navigationTestVersion"
+
 }
