@@ -12,5 +12,5 @@ dependencies {
     "implementation"(Navigation.navigationFragmentKtx)
     "implementation"(Navigation.navigationUiKtx)
     "debugImplementation"(Testing.fragmentTest)
-    "implementation"("androidx.test.ext:junit-ktx:1.1.3")
+    "implementation"(Testing.junitKtx)
 }

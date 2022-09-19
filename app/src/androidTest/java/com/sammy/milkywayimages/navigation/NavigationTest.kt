@@ -1,13 +1,9 @@
-package com.sammy.milkywayimages
+package com.sammy.milkywayimages.navigation
 
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.navigation.Navigation
 import androidx.navigation.testing.TestNavHostController
 import androidx.test.core.app.ApplicationProvider
-import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers
-import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.runner.AndroidJUnit4
 import com.google.common.truth.Truth.assertThat
 import com.sammy.presentation.R
@@ -36,9 +32,6 @@ class NavigationTest {
             // Make the NavController available via the findNavController() APIs
             Navigation.setViewNavController(fragment.requireView(), navController)
         }
-
-        // Verify recyclerview is displayed
-        onView(ViewMatchers.withId(R.id.galaxyRecycler)).check(matches(isDisplayed()))
         //verify start destination is search fragment
         assertThat(navController.currentDestination?.id).isEqualTo(R.id.searchFragment)
     }
